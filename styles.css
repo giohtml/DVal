@@ -376,10 +376,15 @@ h1 {
     min-height: auto;
     max-height: 90vh;
     padding: 18px 14px;
+
+    /* ✅ allow scroll if content is too tall */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .gifBox {
     width: 200px;
     height: 200px;
+    flex: 0 0 auto;
   }
 
   /* Note pages */
@@ -387,12 +392,19 @@ h1 {
     min-height: auto;
     max-height: 90vh;
     padding: 18px 14px;
+
+    /* ✅ BIG FIX: do NOT clip on mobile */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    /* ✅ don't force center when scrolling; keeps top visible */
+    justify-content: flex-start;
   }
 
-  /* ✅ FIX: make note gif box taller + responsive so page 6 isn't cut off */
+  /* ✅ FIX: responsive gif box that doesn't take over the screen */
   .noteGifBox {
-    width: min(280px, 90%);
-    height: min(32vh, 260px);
+    width: min(300px, 92%);
+    height: min(26vh, 220px);
     flex: 0 0 auto;
   }
 
@@ -407,9 +419,9 @@ h1 {
   .bear { width: 150px; height: 150px; }
   .gifBox { width: 180px; height: 180px; }
 
-  /* ✅ keep it tall even on tiny phones */
+  /* ✅ keep it visible but not huge */
   .noteGifBox {
-    width: min(260px, 92%);
-    height: min(34vh, 250px);
+    width: min(280px, 94%);
+    height: min(28vh, 220px);
   }
 }

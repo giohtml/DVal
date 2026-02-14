@@ -244,7 +244,7 @@ h1 {
 }
 
 /* =========================
-   Note Pages (1 - 6)
+   Note Pages (1 - 7)
    ========================= */
 .notePage {
   display: none;
@@ -388,10 +388,14 @@ h1 {
     max-height: 90vh;
     padding: 18px 14px;
   }
+
+  /* ✅ FIX: make note gif box taller + responsive so page 6 isn't cut off */
   .noteGifBox {
-    width: 240px;
-    height: 190px;
+    width: min(280px, 90%);
+    height: min(32vh, 260px);
+    flex: 0 0 auto;
   }
+
   .noteMessage {
     max-width: 32ch;
   }
@@ -402,5 +406,10 @@ h1 {
   h1 { font-size: 24px; }
   .bear { width: 150px; height: 150px; }
   .gifBox { width: 180px; height: 180px; }
-  .noteGifBox { width: 220px; height: 170px; }
+
+  /* ✅ keep it tall even on tiny phones */
+  .noteGifBox {
+    width: min(260px, 92%);
+    height: min(34vh, 250px);
+  }
 }

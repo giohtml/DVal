@@ -1,8 +1,4 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
-  // ------------------------------
-  // NO button text + YES growth
-  // ------------------------------
   const noPhrases = [
     "Nahh",
     "Are you sure?",
